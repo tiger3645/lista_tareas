@@ -38,23 +38,25 @@ class TarjetaTarea extends StatelessWidget {
   void mostrarDetalleTarea(BuildContext context, Tarea tarea) {
     showBottomSheet(
         context: context,
-        builder: (context) => Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text('Detalle de Tarea',
-                      style: Theme.of(context).textTheme.titleLarge),
-                  const SizedBox(height: 50),
-                  Text('Id: ${tarea.id}'),
-                  const SizedBox(height: 10),
-                  Text(
-                      'Creación: ${DateFormat('dd/MM/yyyy HH:mm').format(tarea.fechaHoraCreacion)}'),
-                  const SizedBox(height: 10),
-                  Text('Descripción: ${tarea.descripcion}'),
-                  const SizedBox(height: 10),
-                  Text('Finalizada: ${tarea.finalizada ? 'Si' : 'No'}'),
-                ],
+        builder: (context) => Center(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text('Detalle de Tarea',
+                        style: Theme.of(context).textTheme.titleLarge),
+                    const SizedBox(height: 50),
+                    Text('Id: ${tarea.id}'),
+                    const SizedBox(height: 10),
+                    Text(
+                        'Creación: ${DateFormat('dd/MM/yyyy HH:mm').format(tarea.fechaHoraCreacion)}'),
+                    const SizedBox(height: 10),
+                    Text('Descripción: ${tarea.descripcion}'),
+                    const SizedBox(height: 10),
+                    Text('Finalizada: ${tarea.finalizada ? 'Si' : 'No'}'),
+                  ],
+                ),
               ),
             ));
   }
